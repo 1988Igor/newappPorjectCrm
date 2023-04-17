@@ -8,71 +8,66 @@ import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotEmpty;
 import jakarta.validation.constraints.NotNull;
 
+import java.time.LocalDate;
+
 @Entity
 public class Contact extends AbstractEntity {
 
-    @NotEmpty
-    private String firstName = "";
+    private Integer projectNumber;
+    private String projectName;
+    private LocalDate dateOfBeginn;
+    private String projectManager;
+    private Integer priceNetto;
+    private Integer priceBrutto;
+    private String statusOfProject;
+    private String comments;
 
-    @NotEmpty
-    private String lastName = "";
-
-    @ManyToOne
-    @JoinColumn(name = "company_id")
-    @NotNull
-    @JsonIgnoreProperties({"employees"})
-    private Company company;
-
-    @NotNull
-    @ManyToOne
-    private Status status;
-
-    @Email
-    @NotEmpty
-    private String email = "";
-
-    @Override
-    public String toString() {
-        return firstName + " " + lastName;
+    public Integer getProjectNumber() {
+        return projectNumber;
     }
-
-    public String getFirstName() {
-        return firstName;
+    public void setProjectNumber(Integer projectNumber) {
+        this.projectNumber = projectNumber;
     }
-
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
+    public String getProjectName() {
+        return projectName;
     }
-
-    public String getLastName() {
-        return lastName;
+    public void setProjectName(String projectName) {
+        this.projectName = projectName;
     }
-
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
+    public LocalDate getDateOfBeginn() {
+        return dateOfBeginn;
     }
-
-    public Company getCompany() {
-        return company;
+    public void setDateOfBeginn(LocalDate dateOfBeginn) {
+        this.dateOfBeginn = dateOfBeginn;
     }
-
-    public void setCompany(Company company) {
-        this.company = company;
+    public String getProjectManager() {
+        return projectManager;
     }
-
-    public Status getStatus() {
-        return status;
+    public void setProjectManager(String projectManager) {
+        this.projectManager = projectManager;
     }
-
-    public void setStatus(Status status) {
-        this.status = status;
+    public Integer getPriceNetto() {
+        return priceNetto;
     }
-
-    public String getEmail() {
-        return email;
+    public void setPriceNetto(Integer priceNetto) {
+        this.priceNetto = priceNetto;
     }
-
-    public void setEmail(String email) {
-        this.email = email;
+    public Integer getPriceBrutto() {
+        return priceBrutto;
+    }
+    public void setPriceBrutto(Integer priceBrutto) {
+        this.priceBrutto = priceBrutto;
+    }
+    public String getStatusOfProject() {
+        return statusOfProject;
+    }
+    public void setStatusOfProject(String statusOfProject) {
+        this.statusOfProject = statusOfProject;
+    }
+    public String getComments() {
+        return comments;
+    }
+    public void setComments(String comments) {
+        this.comments = comments;
     }
 }
