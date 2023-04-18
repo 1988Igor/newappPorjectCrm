@@ -12,13 +12,19 @@ import java.time.LocalDate;
 
 @Entity
 public class Contact extends AbstractEntity {
-
+    @NotEmpty
     private Integer projectNumber;
+    @NotEmpty
     private String projectName;
+    @NotEmpty
     private LocalDate dateOfBeginn;
+    @NotEmpty
     private String projectManager;
+    @NotEmpty
     private Integer priceNetto;
+    @NotEmpty
     private Integer priceBrutto;
+    @NotEmpty
     private String statusOfProject;
     private String comments;
 
